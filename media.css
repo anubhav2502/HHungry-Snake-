@@ -1,0 +1,46 @@
+@media screen and (max-width: 800px){
+    .instructions{
+        display: none;
+    }
+    #stats{
+        display: flex;
+        z-index: 0;
+    }
+    #board{
+        z-index: 1;
+    }
+    .stats-boxes{
+        opacity: 1;
+        top: 1%;
+        border: 1px ;
+        width: 30%;
+        height: 10%;
+        box-shadow: none;
+    }
+    .stats-top-area{
+        font-size: 1.2rem;
+    }
+    .score-board{
+        margin-left: 9%;
+    }
+    #set-difficulty{
+        padding: 2px;
+        max-width: 60%;
+    }
+    #highest-score{
+        margin-bottom: 9px;
+        font-size: 1.2rem;
+    }
+    .controls{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .controls i{
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+    #board{
+        height: 70vmin;
+    }
+}

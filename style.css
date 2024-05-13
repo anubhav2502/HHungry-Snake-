@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    min-height: 100vh;
+    /* background: url("../images/snake.jpg.jpg"); */
+    /* background: url('../images/wp2409819-snake-game-wallpapers.jpg'); */
+    background-position: 0 80%;
+    background: linear-gradient(to top,#171b26,#b8c6dc);
+    background-size: 110% 110%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.instructions{
+    opacity:0.6;
+    border-radius: 2px;
+    scale: 2;
+    position: absolute;
+    padding-left: 4px;
+    font-size: 3px;
+    left: 110px;
+    top: 180px;
+    background-color: rgb(114, 141, 158);
+}
+.instructions:hover{
+    opacity: 1;
+    color: #212837;
+    background: #b8c6dc;
+    scale: 4;
+}
+
+/* stats boxes */
+.stats-boxes{
+    height: 100px;
+    width: 200px;
+    border: 1px solid white;
+    background:#212837;
+    background-size: 300px 100px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    opacity: 0.6;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 6px 6px 0px 1px rgb(8, 28, 46);
+}
+.stats-boxes:hover{
+    scale: 1.2;
+}
+.stats-top-area{
+    transition: 0.3s;
+    border-radius: 5px;
+    color: rgb(255, 253, 253);
+    margin-bottom: 20px;
+    background-color: rgb(19, 18, 18);
+    font-weight: 900;
+    font-size: 1.6rem;
+}
+.stats-top-area:hover{
+    scale: 1.2;
+}
+.difficulty{
+    right: 90px;
+    top: 30px;
+}
+#set-difficulty{
+    width:60%;
+    padding: 6px;
+    background: transparent;
+    border: 2.3px solid #b8c6dc;
+    font-weight: 900;
+    color: white;
+}
+#set-difficulty:focus{
+    color: black;
+    background-color: white;
+}
+.score-board{
+    left: 30px;
+    top: 30px;
+}
+#score{
+    font-weight: 800;
+    z-index: 1;
+    font-size: 1.6rem;
+    text-shadow: -0.8px 0.8px 0 #293447,
+                  0.8px 0.8px 0 #293447,
+                  0.8px -0.8px 0 #293447,
+                 -0.8px -0.8px 0 #293447;
+    backdrop-filter: blur(3px) saturate(50%);
+    color: rgb(142, 145, 10);
+}
+
+/*  game board */
+#board{
+    background: #212837;
+    z-index:1;
+    height: 80vmin;
+    width: 78vmin;
+    border: 1px solid white;
+    /* box-shadow: 10px 10px 900px 20px rgb(73, 97, 73); */
+    display: grid;
+    grid-template-columns: repeat(31,1fr);
+    grid-template-rows: repeat(31,1fr);
+}
+
+.head{
+    animation: shake 0.5s linear 1;
+    /* background: url("../images/snake.jpg.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    background-color: rgb(186, 216, 16);
+    scale: 1.15;
+}
+.head::before{
+    content: "";
+    width: 22%;
+    height: 23%;
+    border-radius: 100%;
+    background: rgb(10, 94, 89);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+.head::after{
+    content: "";
+    width: 22%;
+    height: 23%;
+    border-radius: 100%;
+    background: rgb(10, 94, 89);
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+.snake{
+    background:linear-gradient(to bottom,rgb(78, 133, 95), rgb(71, 189, 120));
+    border: 1px solid rgb(72, 148, 78);
+    border-radius: 1px;
+}
+.food{
+    background:linear-gradient(to bottom,rgb(243, 154, 243), rgb(181, 248, 209));
+    border: 1px dashed indianred;
+    border-radius: 14px;
+}
+
+.controls{
+    display: none;
+    width: 78vmin;
+    justify-content: space-around;
+    background-color: #293447;
+}
+.controls i {
+    padding: 25px 0;
+    color: #b8c6dc;
+    width: calc(100%/4);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-right: 1px solid #171b26;
+}
+
+/*  snake shake effectss */
+
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    80% {
+      transform: translate3d(1px, 0, 0);
+    }
+  
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+  
+    40%,
+    60% {
+      transform: translate3d(2px, 0, 0);
+    }}
