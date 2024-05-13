@@ -80,9 +80,9 @@ function gameEngine (){
         snakeArr[0].x += snakeVelocity.x;
         snakeArr[0].y += snakeVelocity.y;
 
-    // bhaag 2: saanp aur khane ka asli roop dikhao 🍔🍔🍔
+
     board.innerHTML = "";
-    // saanp aaya
+  
     snakeArr.forEach((e,index)=>{
         var snakeElement = document.createElement('div');
         snakeElement.style.gridRowStart = e.y;
