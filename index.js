@@ -1,4 +1,3 @@
-// saanp ka bhoonkh lagi hai khana do jaldi (●'◡'●)
 
 // Constants and Variable
 let snakeVelocity = {x: 0, y: 0};
@@ -21,7 +20,7 @@ let snakeArr = [{x: 10, y: 12}];
 let food = {x: 13, y:4};
 speed = speed * (JSON.parse(diffLevel.value));
 
-// functions are here || be carefull kahin saanp kaat na le ಥ_ಥ
+// functions are here 
 function main(currentTime){
     window.requestAnimationFrame(main);
     if((currentTime-lastPaintTime)/1000 < 1/speed){
@@ -45,21 +44,21 @@ function isCollide(saanp){
     }
     return false;
 }
-//  saanp ka dil
+
 function gameEngine (){
-    // bhaag 1: saanp hai khud ko hi dhas lega ( ´･･)ﾉ(._.`)🐍
+  
     if(isCollide(snakeArr)){
         moveSound.pause();
         snakeVelocity={x:0, y:0};
         // window.location=window.location;
-        alert("Aapka khel yahan samapt hota h");
+        alert("GAME OVER");
         // moveSound.play();
         snakeArr = [{x: 10, y: 12}];
         food = {x: 13, y:4};
         score = 0;
     }
 
-    // nawab sahab ke liye naya khana banao aur inka pet(score) badao
+   
     if(snakeArr[0].x === food.x && snakeArr[0].y===food.y){
         ++score;
         if(score>hiiScoreVal){
@@ -74,7 +73,7 @@ function gameEngine (){
         randomFoodIndex = Math.floor(Math.random()*foodItemsArray.length);
         food = {x: Math.round(a+(b-a)*Math.random()), y: Math.round(a+(b-a)*Math.random())}
     }
-    // ab saanp hilae.. matlab hilega *****************IMPORTANT SECTION****************
+    //*****************IMPORTANT SECTION****************
     for(let i=snakeArr.length-2; i>=0; --i){
         snakeArr[i+1]={...snakeArr[i]};
     }
@@ -95,7 +94,7 @@ function gameEngine (){
         }
         board.appendChild(snakeElement);
     });
-    // suniye ji khana ban gaya aakar kha lijiye
+    
     var foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
@@ -105,7 +104,7 @@ function gameEngine (){
     foodElement.innerHTML = foodItemsArray[randomFoodIndex];
 }
 
-// Main logic || how the snake is moving main || saanp ka dil hai yahan
+// Main logic || how the snake is moving main 
 hiiScoreVal = localStorage.getItem("hiScore");
 if(hiiScoreVal===null){
     hiiScoreVal=0;
@@ -143,8 +142,7 @@ const changeDirection=(e)=>{
             break;
     }
 }
-
-// button clicks mobile waale bhaiyon k liye***************
+//fOR mobile users
 
 buttonControl.forEach(key =>{
     key.addEventListener("click",()=>changeDirection({key: key.dataset.key}));
@@ -152,8 +150,7 @@ buttonControl.forEach(key =>{
 
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
-    // saanp chanlne laga;
-    // saaanp ki jhan jhan aur madhur geet
+  
     if(e.key === "ArrowUp" || e.key==="ArrowDown" || e.key==="ArrowLeft" || e.key==="ArrowRight"){
         setInterval(() => {
             moveSound.play();
