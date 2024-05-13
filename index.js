@@ -4,10 +4,10 @@
 let snakeVelocity = {x: 0, y: 0};
 let board = document.getElementById('board');
 const buttonControl = document.querySelectorAll(".controls i");
-const foodSound = new Audio('sounds/snake-hissing-6092.mp3');
-const gameOverSound = new Audio('sounds/mixkit-cinematic-impact-waves-781.wav');
-const gameOverSound2 = new Audio('sounds/AGFAT7X-8-bit-game-lose.mp3');
-const moveSound = new Audio('sounds/Snake Game - Theme Song.mp3');
+const foodSound = new Audio('snake-hissing-6092.mp3');
+const gameOverSound = new Audio('mixkit-cinematic-impact-waves-781.wav');
+const gameOverSound2 = new Audio('AGFAT7X-8-bit-game-lose.mp3');
+const moveSound = new Audio('Snake Game - Theme Song.mp3');
 const currScore = document.getElementById("score");
 const foodItemsArray = ["🐁","🍇","🍉","🍈","🍓","🍍","🍌","🥝","🍏","🍎","🍔","🍅","🥚",];
 let randomFoodIndex = Math.floor(Math.random()*foodItemsArray.length);;
